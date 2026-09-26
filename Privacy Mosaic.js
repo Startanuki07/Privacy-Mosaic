@@ -4,20 +4,8 @@
 // @homepageURL  https://github.com/Startanuki07
 // @license      MIT
 // @author       Star_tanuki07
-// @version      1.0.0.0
+// @version      1.0.1.0
 // @description  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
-// @description:en-US  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
-// @description:zh-TW  通用隱私馬賽克工具──在任何網站模糊或遮蔽使用者名稱、ID 與頭像
-// @description:zh-CN  通用隐私马赛克工具──在任何网站模糊或遮蔽用户名、ID 和头像
-// @description:ja  万能プライバシーモザイク──あらゆるサイトでユーザー名、ID、アバターをぼかすか隠します
-// @description:ko  범용 개인정보 모자이크 – 모든 사이트에서 사용자 이름, ID 및 아바타를 흐리게 처리하거나 가립니다
-// @description:es  Mosaico de privacidad universal – desenfoca u oculta nombres de usuario, ID y avatares en cualquier sitio
-// @description:pt-BR  Mosaico de privacidade universal – desfoca ou oculta nomes de usuário, IDs e avatares em qualquer site
-// @description:fr  Masque de confidentialité universel – floute ou masque les identifiants, IDs et avatars sur n’importe quel site
-// @description:ru  Универсальная маскировка конфиденциальности — размывает или скрывает имена пользователей, ID и аватары на любом сайте
-// @description:de  Universeller Datenschutz-Mosaikfilter – verwischt oder verbirgt Benutzernamen, IDs und Avatare auf jeder Website
-// @description:it  Mosaico universale per la privacy – sfoca o nasconde nomi utente, ID e avatar su qualsiasi sito
-// @description:tr  Evrensel gizlilik mozaiği – herhangi bir sitede kullanıcı adlarını, kimlikleri ve avatarları bulanıklaştırır veya gizler
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=greasyfork.org
 // @match        *://*/*
 // @noframes
@@ -62,6 +50,7 @@
       ob_rules_title:'Most sites need custom rules',ob_rules_body:'A few sites are recognized automatically, but most pages need you to add your own rule for what to hide.',
       ob_next_title:'Get started',ob_next_body:'Open the Rules tab above and add your first rule to start masking this site.',
       ob_next:'Next',ob_skip:'Skip',ob_gotit:'Got it',
+      first_rule_tip_title:'First custom rule added',first_rule_tip_body:'Since you\'re now using your own rule, you may want to turn off all built-in rules to avoid any overlap or conflict.',first_rule_tip_warn:'Built-in rules are off. Turn them back on anytime from the Rule Manager.',first_rule_tip_ok:'Got it',
     },
     'zh-TW':{
       title:'Privacy Mosaic',enable:'啟用遮罩',
@@ -94,6 +83,7 @@
       ob_rules_title:'大部分網站需要自訂規則',ob_rules_body:'少數網站有內建自動辨識，但大部分頁面需要您自行新增規則來指定要隱藏的內容。',
       ob_next_title:'開始使用',ob_next_body:'點開上方的規則分頁，新增第一條規則來遮罩這個網站。',
       ob_next:'下一步',ob_skip:'跳過',ob_gotit:'知道了',
+      first_rule_tip_title:'已新增第一條自訂規則',first_rule_tip_body:'既然您已經開始使用自己的規則，或許可以考慮關閉全部內建規則，避免彼此重疊或衝突。',first_rule_tip_warn:'內建規則已關閉。若要重新啟用，請至規則管理開啟。',first_rule_tip_ok:'知道了',
     },
     'zh-CN':{
       title:'Privacy Mosaic',enable:'启用遮罩',
@@ -126,6 +116,7 @@
       ob_rules_title:'大部分网站需要自定义规则',ob_rules_body:'少数网站有内置自动识别，但大部分页面需要您自行添加规则来指定要隐藏的内容。',
       ob_next_title:'开始使用',ob_next_body:'点开上方的规则标签页，添加第一条规则来遮罩这个网站。',
       ob_next:'下一步',ob_skip:'跳过',ob_gotit:'知道了',
+      first_rule_tip_title:'已添加第一条自定义规则',first_rule_tip_body:'既然您已经开始使用自己的规则，或许可以考虑关闭全部内置规则，避免彼此重叠或冲突。',first_rule_tip_warn:'内置规则已关闭。若要重新启用，请前往规则管理开启。',first_rule_tip_ok:'知道了',
     },
     ja:{
       title:'Privacy Mosaic',enable:'マスクを有効化',
@@ -158,6 +149,7 @@
       ob_rules_title:'ほとんどのサイトにはカスタムルールが必要です',ob_rules_body:'一部のサイトは自動認識されますが、多くのページでは非表示にする内容を指定するルールを追加する必要があります。',
       ob_next_title:'始めましょう',ob_next_body:'上部の「ルール」タブを開き、最初のルールを追加してこのサイトのマスキングを開始してください。',
       ob_next:'次へ',ob_skip:'スキップ',ob_gotit:'了解',
+      first_rule_tip_title:'最初のカスタムルールを追加しました',first_rule_tip_body:'独自のルールを使い始めたので、内蔵ルールとの重複や競合を避けるため、すべての内蔵ルールをオフにすることを検討できます。',first_rule_tip_warn:'内蔵ルールはオフです。再度有効にするにはルール管理から行ってください。',first_rule_tip_ok:'了解',
     },
     ko:{
       title:'Privacy Mosaic',enable:'마스크 활성화',
@@ -190,6 +182,7 @@
       ob_rules_title:'대부분의 사이트에는 사용자 지정 규칙이 필요합니다',ob_rules_body:'일부 사이트는 자동으로 인식되지만, 대부분의 페이지에서는 숨길 항목을 지정하는 규칙을 직접 추가해야 합니다.',
       ob_next_title:'시작하기',ob_next_body:'위의 규칙 탭을 열고 첫 번째 규칙을 추가하여 이 사이트의 마스킹을 시작하세요.',
       ob_next:'다음',ob_skip:'건너뛰기',ob_gotit:'확인',
+      first_rule_tip_title:'첫 번째 사용자 지정 규칙 추가됨',first_rule_tip_body:'이제 자신만의 규칙을 사용하고 계시니, 중복이나 충돌을 피하기 위해 모든 내장 규칙을 꺼두는 것을 고려해 보세요.',first_rule_tip_warn:'내장 규칙이 꺼져 있습니다. 다시 켜려면 규칙 관리에서 설정하세요.',first_rule_tip_ok:'확인',
     },
     es:{
       title:'Privacy Mosaic',enable:'Activar máscara',
@@ -222,6 +215,7 @@
       ob_rules_title:'La mayoría de los sitios necesitan reglas personalizadas',ob_rules_body:'Algunos sitios se reconocen automáticamente, pero la mayoría de las páginas requieren que añadas tu propia regla para lo que ocultar.',
       ob_next_title:'Comenzar',ob_next_body:'Abre la pestaña Reglas arriba y añade tu primera regla para empezar a enmascarar este sitio.',
       ob_next:'Siguiente',ob_skip:'Omitir',ob_gotit:'Entendido',
+      first_rule_tip_title:'Primera regla personalizada añadida',first_rule_tip_body:'Ya que ahora usas tu propia regla, quizás quieras desactivar todas las reglas integradas para evitar solapamientos o conflictos.',first_rule_tip_warn:'Las reglas integradas están desactivadas. Puedes reactivarlas en cualquier momento desde el Administrador de reglas.',first_rule_tip_ok:'Entendido',
     },
     'pt-BR':{
       title:'Privacy Mosaic',enable:'Ativar máscara',
@@ -254,6 +248,7 @@
       ob_rules_title:'A maioria dos sites precisa de regras personalizadas',ob_rules_body:'Alguns sites são reconhecidos automaticamente, mas a maioria das páginas exige que você adicione sua própria regra para o que ocultar.',
       ob_next_title:'Vamos começar',ob_next_body:'Abra a aba Regras acima e adicione sua primeira regra para começar a mascarar este site.',
       ob_next:'Próximo',ob_skip:'Pular',ob_gotit:'Entendi',
+      first_rule_tip_title:'Primeira regra personalizada adicionada',first_rule_tip_body:'Já que agora você está usando sua própria regra, talvez queira desativar todas as regras integradas para evitar sobreposição ou conflito.',first_rule_tip_warn:'As regras integradas estão desativadas. Reative-as a qualquer momento no Gerenciador de regras.',first_rule_tip_ok:'Entendi',
     },
     fr:{
       title:'Privacy Mosaic',enable:'Activer le masque',
@@ -286,6 +281,7 @@
       ob_rules_title:'La plupart des sites nécessitent des règles personnalisées',ob_rules_body:'Certains sites sont reconnus automatiquement, mais la plupart des pages nécessitent que vous ajoutiez votre propre règle pour ce qu\'il faut masquer.',
       ob_next_title:'Commencer',ob_next_body:'Ouvrez l\'onglet Règles ci-dessus et ajoutez votre première règle pour commencer à masquer ce site.',
       ob_next:'Suivant',ob_skip:'Ignorer',ob_gotit:'Compris',
+      first_rule_tip_title:'Première règle personnalisée ajoutée',first_rule_tip_body:'Puisque vous utilisez désormais votre propre règle, vous pouvez envisager de désactiver toutes les règles intégrées pour éviter tout chevauchement ou conflit.',first_rule_tip_warn:'Les règles intégrées sont désactivées. Réactivez-les à tout moment depuis le gestionnaire de règles.',first_rule_tip_ok:'Compris',
     },
     ru:{
       title:'Privacy Mosaic',enable:'Включить маску',
@@ -318,6 +314,7 @@
       ob_rules_title:'Большинству сайтов нужны свои правила',ob_rules_body:'Некоторые сайты распознаются автоматически, но для большинства страниц нужно добавить своё правило для того, что скрывать.',
       ob_next_title:'Начать',ob_next_body:'Откройте вкладку «Правила» выше и добавьте своё первое правило, чтобы начать маскировку этого сайта.',
       ob_next:'Далее',ob_skip:'Пропустить',ob_gotit:'Понятно',
+      first_rule_tip_title:'Добавлено первое пользовательское правило',first_rule_tip_body:'Раз вы теперь используете собственное правило, вы можете отключить все встроенные правила, чтобы избежать пересечений или конфликтов.',first_rule_tip_warn:'Встроенные правила отключены. Включить их снова можно в любой момент в диспетчере правил.',first_rule_tip_ok:'Понятно',
     },
     de:{
       title:'Privacy Mosaic',enable:'Maske aktivieren',
@@ -350,6 +347,7 @@
       ob_rules_title:'Die meisten Seiten benötigen eigene Regeln',ob_rules_body:'Einige Seiten werden automatisch erkannt, aber für die meisten Seiten müssen Sie eine eigene Regel hinzufügen, was verborgen werden soll.',
       ob_next_title:'Loslegen',ob_next_body:'Öffnen Sie oben den Tab „Regeln“ und fügen Sie Ihre erste Regel hinzu, um diese Seite zu maskieren.',
       ob_next:'Weiter',ob_skip:'Überspringen',ob_gotit:'Verstanden',
+      first_rule_tip_title:'Erste eigene Regel hinzugefügt',first_rule_tip_body:'Da Sie jetzt Ihre eigene Regel verwenden, möchten Sie vielleicht alle integrierten Regeln deaktivieren, um Überschneidungen oder Konflikte zu vermeiden.',first_rule_tip_warn:'Integrierte Regeln sind deaktiviert. Sie können sie jederzeit im Regel-Manager wieder aktivieren.',first_rule_tip_ok:'Verstanden',
     },
     it:{
       title:'Privacy Mosaic',enable:'Abilita maschera',
@@ -382,6 +380,7 @@
       ob_rules_title:'La maggior parte dei siti richiede regole personalizzate',ob_rules_body:'Alcuni siti vengono riconosciuti automaticamente, ma la maggior parte delle pagine richiede l\'aggiunta di una propria regola per ciò che nascondere.',
       ob_next_title:'Inizia',ob_next_body:'Apri la scheda Regole in alto e aggiungi la tua prima regola per iniziare a mascherare questo sito.',
       ob_next:'Avanti',ob_skip:'Salta',ob_gotit:'Capito',
+      first_rule_tip_title:'Prima regola personalizzata aggiunta',first_rule_tip_body:'Dato che ora usi una tua regola personalizzata, potresti voler disattivare tutte le regole integrate per evitare sovrapposizioni o conflitti.',first_rule_tip_warn:'Le regole integrate sono disattivate. Puoi riattivarle in qualsiasi momento dal Gestore regole.',first_rule_tip_ok:'Capito',
     },
     tr:{
       title:'Privacy Mosaic',enable:'Maskelemeyi etkinleştir',
@@ -414,6 +413,7 @@
       ob_rules_title:'Çoğu site özel kurallara ihtiyaç duyar',ob_rules_body:'Bazı siteler otomatik olarak tanınır, ancak çoğu sayfada gizlenecek şeyi belirtmek için kendi kuralınızı eklemeniz gerekir.',
       ob_next_title:'Başlayalım',ob_next_body:'Yukarıdaki Kurallar sekmesini açın ve bu siteyi maskelemeye başlamak için ilk kuralınızı ekleyin.',
       ob_next:'İleri',ob_skip:'Atla',ob_gotit:'Anladım',
+      first_rule_tip_title:'İlk özel kural eklendi',first_rule_tip_body:'Artık kendi kuralınızı kullandığınıza göre, çakışma veya çelişkileri önlemek için tüm yerleşik kuralları kapatmayı düşünebilirsiniz.',first_rule_tip_warn:'Yerleşik kurallar kapalı. İstediğiniz zaman Kural Yöneticisi\'nden tekrar açabilirsiniz.',first_rule_tip_ok:'Anladım',
     },
   };
 
@@ -470,7 +470,7 @@
   ];
   const ALL_SEL     = [...AVATAR_SEL,...HANDLE_SEL,...ID_SEL];
   const ALL_SEL_STR = ALL_SEL.join(',');
-  const GUARD       = `#${P}-panel, .${P}-fab-wrap, #${P}-detect-bar, #${P}-rule-dialog, #${P}-rule-dialog-backdrop, #${P}-confirm-dialog, #${P}-confirm-backdrop, #${P}-lang-dialog, #${P}-lang-dialog-backdrop, #${P}-rv-drop, #${P}-toast, #${P}-rulemgr, #${P}-rulemgr-backdrop, .${P}-intro-ring`;
+  const GUARD       = `#${P}-panel, .${P}-fab-wrap, #${P}-detect-bar, #${P}-rule-dialog, #${P}-rule-dialog-backdrop, #${P}-confirm-dialog, #${P}-confirm-backdrop, #${P}-lang-dialog, #${P}-lang-dialog-backdrop, #${P}-rv-drop, #${P}-toast, #${P}-rulemgr, #${P}-rulemgr-backdrop, #${P}-firstrule-dialog, .${P}-intro-ring`;
 
   let cfg={style:'blur',intensity:8,persistent:false,fabAllowlist:[],iconSize:36,lang:'',theme:'dark',customRules:[],panelX:null,panelY:null,redactVariant:'solid',onboarded:false,defaultRulesEnabled:true,highlightDefaultRules:false,disabledDefaultSelectors:[]};
   let enabled=false;
@@ -1015,6 +1015,32 @@
       .${P}-rd-btn.cancel:hover{border-color:#5050a0!important;color:#a0a0d0!important;}
       .${P}-rd-btn.save{background:#3030a0!important;border:1px solid #5050e0!important;color:#d0d0ff!important;}
       .${P}-rd-btn.save:hover{background:#4040c0!important;}
+
+      #${P}-firstrule-dialog{
+        all:initial;position:fixed!important;top:50%!important;left:50%!important;
+        transform:translate(-50%,-50%)!important;z-index:2147483647!important;
+        width:320px!important;background:#13131f!important;border:1px solid #3030a0!important;
+        border-radius:14px!important;padding:22px!important;box-sizing:border-box!important;
+        font-family:system-ui,-apple-system,sans-serif!important;
+        box-shadow:0 20px 60px rgba(0,0,20,.9)!important;
+        display:none!important;flex-direction:column!important;gap:14px!important;
+      }
+      #${P}-firstrule-dialog.open{display:flex!important;}
+      .${P}-fr-body{font-size:13px!important;color:#a0a0d0!important;line-height:1.5!important;}
+      .${P}-fr-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;}
+      .${P}-fr-row-lbl{font-size:13px!important;color:#c0c0ff!important;font-weight:600!important;}
+      
+      .${P}-fr-warn{
+        display:none!important;font-size:12px!important;color:#ff6b6b!important;
+        background:rgba(255,60,60,.1)!important;border:1px solid rgba(255,60,60,.35)!important;
+        border-radius:8px!important;padding:8px 10px!important;line-height:1.45!important;
+      }
+      .${P}-fr-warn.show{display:block!important;}
+      
+      #${P}-firstrule-dialog .${P}-sw{background:#2a2a52!important;border-color:#46469c!important;}
+      #${P}-firstrule-dialog .${P}-sw::before{background:#8888c8!important;}
+      #${P}-firstrule-dialog .${P}-sw.on{background:#3030a0!important;border-color:#5050e0!important;}
+      #${P}-firstrule-dialog .${P}-sw.on::before{background:#fff!important;}
 
       #${P}-rulemgr{
         all:initial;position:fixed!important;top:50%!important;left:50%!important;
@@ -2089,15 +2115,18 @@
     dlg.querySelector(`#${P}-rd-cancel`).addEventListener('click',()=>closeRuleDialog());
     dlg.querySelector(`#${P}-rd-save`).addEventListener('click',()=>{
       const name=nameInput.value.trim()||selector.slice(0,30);
+      const afterSave=()=>{if(onSaved){onSaved();}else{openPanel();renderCustomRules();}};
       if(isEdit){
         if(!readonly)existingRule.selector=selector;
         existingRule.name=name;saveCfg();
-        removeCustomEffects();scanCustomRules();
+        removeCustomEffects();if(enabled)scanCustomRules();
+        closeRuleDialog();
+        afterSave();
       } else {
-        saveRule(name,selector);
+        const isFirstRule=saveRule(name,selector,afterSave);
+        closeRuleDialog();
+        if(!isFirstRule)afterSave();
       }
-      closeRuleDialog();
-      if(onSaved){onSaved();}else{openPanel();renderCustomRules();}
     });
     nameInput.addEventListener('keydown',e=>{if(e.key==='Enter'){dlg.querySelector(`#${P}-rd-save`).click();}});
   }
@@ -2106,6 +2135,42 @@
     document.getElementById(`${P}-rule-dialog`)?.classList.remove('open');
     document.getElementById(`${P}-rule-dialog-backdrop`)?.classList.remove('open');
     detectEditId=null;
+  }
+
+  function showFirstRuleTip(onDismiss){
+    let dlg=document.getElementById(`${P}-firstrule-dialog`);
+    if(!dlg){
+      dlg=document.createElement('div');
+      dlg.id=`${P}-firstrule-dialog`;
+      document.body.appendChild(dlg);
+    }
+    dlg.innerHTML=trustedHTML(`
+      <div class="${P}-rd-title">🎯 ${t('first_rule_tip_title')}</div>
+      <div class="${P}-fr-body">${escapeHtmlText(t('first_rule_tip_body'))}</div>
+      <div class="${P}-fr-row">
+        <span class="${P}-fr-row-lbl">${t('default_rules')}</span>
+        <div id="${P}-fr-sw" class="${P}-sw ${cfg.defaultRulesEnabled?'on':''}"></div>
+      </div>
+      <div id="${P}-fr-warn" class="${P}-fr-warn ${cfg.defaultRulesEnabled?'':'show'}">${escapeHtmlText(t('first_rule_tip_warn'))}</div>
+      <div class="${P}-rd-actions">
+        <button class="${P}-rd-btn save" id="${P}-fr-ok">${t('first_rule_tip_ok')}</button>
+      </div>
+    `);
+    dlg.classList.add('open');
+
+    dlg.querySelector(`#${P}-fr-sw`).addEventListener('click',function(){
+      cfg.defaultRulesEnabled=!cfg.defaultRulesEnabled;
+      this.classList.toggle('on',cfg.defaultRulesEnabled);
+      saveCfg();
+      if(cfg.defaultRulesEnabled){if(enabled)scanAndTag();}
+      else{clearDefaultRuleEffects();}
+      renderDefaultRulesBar();
+      dlg.querySelector(`#${P}-fr-warn`).classList.toggle('show',!cfg.defaultRulesEnabled);
+    });
+    dlg.querySelector(`#${P}-fr-ok`).addEventListener('click',()=>{
+      dlg.classList.remove('open');
+      if(onDismiss)onDismiss();
+    });
   }
 
   function showConfirmDialog(message,onConfirm){
@@ -2184,10 +2249,13 @@
     document.addEventListener('keydown',onEsc);
   }
 
-  function saveRule(name,selector){
+  function saveRule(name,selector,onFirstRuleDismiss){
+    const isFirstRule=cfg.customRules.length===0;
     const id=`rule_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
     cfg.customRules.push({id,name,selector,site:location.hostname,enabled:true});
-    saveCfg();syncObserver();scanCustomRules();renderCustomRules();
+    saveCfg();syncObserver();if(enabled)scanCustomRules();renderCustomRules();
+    if(isFirstRule)showFirstRuleTip(onFirstRuleDismiss);
+    return isFirstRule;
   }
 
   function deleteRule(id){
@@ -2213,7 +2281,7 @@
     saveCfg();
     const sw=panelEl?.querySelector(`.${P}-sw[data-rid="${id}"]`);
     if(sw)sw.classList.toggle('on',rule.enabled);
-    if(rule.enabled){syncObserver();scanCustomRules();}
+    if(rule.enabled){syncObserver();if(enabled)scanCustomRules();}
     else{
       document.querySelectorAll(`.${P}-custom-active`).forEach(el=>{
         if((el.dataset.pmRids||'').includes(id)){
@@ -2293,11 +2361,6 @@
       removeCustomEffects();
     }
     syncObserver();
-    if(cfg.persistent!==enabled){
-      cfg.persistent=enabled;
-      const persistSw=panelEl?.querySelector(`#${P}-persist`);
-      if(persistSw)persistSw.classList.toggle('on',cfg.persistent);
-    }
     saveCfg();
     if(!cfg.onboarded)openPanel();
   }
@@ -2306,7 +2369,7 @@
     panelEl.querySelectorAll(`.${P}-btn`).forEach(b=>b.classList.toggle('on',b.dataset.s===s));
     updateIntensityUi();
     if(enabled){removeMosaic();scanAndTag();}
-    if(customRulesActive()){removeCustomEffects();scanCustomRules();}
+    if(enabled&&customRulesActive()){removeCustomEffects();scanCustomRules();}
     saveCfg();
   }
 
@@ -2508,7 +2571,6 @@
   function registerMenus(){
     try{
       GM_registerMenuCommand(t('menu_panel'),openPanel);
-      GM_registerMenuCommand(t('menu_toggle'),onMasterToggle);
       GM_registerMenuCommand(
         isFabAllowedHere()?t('menu_hide_fab'):t('menu_show_fab'),
         ()=>{
