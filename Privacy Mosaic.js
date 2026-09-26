@@ -4,8 +4,20 @@
 // @homepageURL  https://github.com/Startanuki07
 // @license      MIT
 // @author       Star_tanuki07
-// @version      1.0.1.0
+// @version      1.0.1.1
 // @description  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
+// @description:en-US  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
+// @description:zh-TW  通用隱私馬賽克工具──在任何網站模糊或遮蔽使用者名稱、ID 與頭像
+// @description:zh-CN  通用隐私马赛克工具──在任何网站模糊或遮蔽用户名、ID 和头像
+// @description:ja  万能プライバシーモザイク──あらゆるサイトでユーザー名、ID、アバターをぼかすか隠します
+// @description:ko  범용 개인정보 모자이크 – 모든 사이트에서 사용자 이름, ID 및 아바타를 흐리게 처리하거나 가립니다
+// @description:es  Mosaico de privacidad universal – desenfoca u oculta nombres de usuario, ID y avatares en cualquier sitio
+// @description:pt-BR  Mosaico de privacidade universal – desfoca ou oculta nomes de usuário, IDs e avatares em qualquer site
+// @description:fr  Masque de confidentialité universel – floute ou masque les identifiants, IDs et avatars sur n’importe quel site
+// @description:ru  Универсальная маскировка конфиденциальности — размывает или скрывает имена пользователей, ID и аватары на любом сайте
+// @description:de  Universeller Datenschutz-Mosaikfilter – verwischt oder verbirgt Benutzernamen, IDs und Avatare auf jeder Website
+// @description:it  Mosaico universale per la privacy – sfoca o nasconde nomi utente, ID e avatar su qualsiasi sito
+// @description:tr  Evrensel gizlilik mozaiği – herhangi bir sitede kullanıcı adlarını, kimlikleri ve avatarları bulanıklaştırır veya gizler
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=greasyfork.org
 // @match        *://*/*
 // @noframes
