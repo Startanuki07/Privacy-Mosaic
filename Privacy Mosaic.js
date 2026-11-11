@@ -4,7 +4,7 @@
 // @homepageURL  https://github.com/Startanuki07
 // @license      MIT
 // @author       Star_tanuki07
-// @version      1.0.1.1
+// @version      1.0.1.2
 // @description  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
 // @description:en-US  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
 // @description:zh-TW  通用隱私馬賽克工具──在任何網站模糊或遮蔽使用者名稱、ID 與頭像
@@ -20,6 +20,7 @@
 // @description:tr  Evrensel gizlilik mozaiği – herhangi bir sitede kullanıcı adlarını, kimlikleri ve avatarları bulanıklaştırır veya gizler
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=greasyfork.org
 // @match        *://*/*
+// @exclude      *://x.com/i/grok
 // @noframes
 // @grant        GM_addStyle
 // @grant        GM_setValue
