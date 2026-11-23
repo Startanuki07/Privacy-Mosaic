@@ -4,20 +4,8 @@
 // @homepageURL  https://github.com/Startanuki07
 // @license      MIT
 // @author       Star_tanuki07
-// @version      1.0.1.2
+// @version      1.0.1.3
 // @description  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
-// @description:en-US  Universal privacy mosaic – blur or redact handles, IDs, and avatars on any site
-// @description:zh-TW  通用隱私馬賽克工具──在任何網站模糊或遮蔽使用者名稱、ID 與頭像
-// @description:zh-CN  通用隐私马赛克工具──在任何网站模糊或遮蔽用户名、ID 和头像
-// @description:ja  万能プライバシーモザイク──あらゆるサイトでユーザー名、ID、アバターをぼかすか隠します
-// @description:ko  범용 개인정보 모자이크 – 모든 사이트에서 사용자 이름, ID 및 아바타를 흐리게 처리하거나 가립니다
-// @description:es  Mosaico de privacidad universal – desenfoca u oculta nombres de usuario, ID y avatares en cualquier sitio
-// @description:pt-BR  Mosaico de privacidade universal – desfoca ou oculta nomes de usuário, IDs e avatares em qualquer site
-// @description:fr  Masque de confidentialité universel – floute ou masque les identifiants, IDs et avatars sur n’importe quel site
-// @description:ru  Универсальная маскировка конфиденциальности — размывает или скрывает имена пользователей, ID и аватары на любом сайте
-// @description:de  Universeller Datenschutz-Mosaikfilter – verwischt oder verbirgt Benutzernamen, IDs und Avatare auf jeder Website
-// @description:it  Mosaico universale per la privacy – sfoca o nasconde nomi utente, ID e avatar su qualsiasi sito
-// @description:tr  Evrensel gizlilik mozaiği – herhangi bir sitede kullanıcı adlarını, kimlikleri ve avatarları bulanıklaştırır veya gizler
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=greasyfork.org
 // @match        *://*/*
 // @exclude      *://x.com/i/grok
@@ -64,6 +52,7 @@
       ob_next_title:'Get started',ob_next_body:'Open the Rules tab above and add your first rule to start masking this site.',
       ob_next:'Next',ob_skip:'Skip',ob_gotit:'Got it',
       first_rule_tip_title:'First custom rule added',first_rule_tip_body:'Since you\'re now using your own rule, you may want to turn off all built-in rules to avoid any overlap or conflict.',first_rule_tip_warn:'Built-in rules are off. Turn them back on anytime from the Rule Manager.',first_rule_tip_ok:'Got it',
+      rule_saved:(name,n)=>`Rule saved: ${name} · ${n} element${n!==1?'s':''} matched on this page`,rule_saved_zero:name=>`Rule saved: ${name} · Nothing matched on this page. The selector may be too specific.`,rule_saved_off:name=>`Rule saved: ${name} · Masking is off, so nothing is masked yet. Turn on "${t('enable')}".`,
     },
     'zh-TW':{
       title:'Privacy Mosaic',enable:'啟用遮罩',
@@ -97,6 +86,7 @@
       ob_next_title:'開始使用',ob_next_body:'點開上方的規則分頁，新增第一條規則來遮罩這個網站。',
       ob_next:'下一步',ob_skip:'跳過',ob_gotit:'知道了',
       first_rule_tip_title:'已新增第一條自訂規則',first_rule_tip_body:'既然您已經開始使用自己的規則，或許可以考慮關閉全部內建規則，避免彼此重疊或衝突。',first_rule_tip_warn:'內建規則已關閉。若要重新啟用，請至規則管理開啟。',first_rule_tip_ok:'知道了',
+      rule_saved:(name,n)=>`規則已儲存：${name} · 本頁命中 ${n} 個元素`,rule_saved_zero:name=>`規則已儲存：${name} · 本頁沒有命中任何元素，選擇器可能太具體。`,rule_saved_off:name=>`規則已儲存：${name} · 遮罩目前關閉，所以還看不到效果。請先開啟「${t('enable')}」。`,
     },
     'zh-CN':{
       title:'Privacy Mosaic',enable:'启用遮罩',
@@ -130,6 +120,7 @@
       ob_next_title:'开始使用',ob_next_body:'点开上方的规则标签页，添加第一条规则来遮罩这个网站。',
       ob_next:'下一步',ob_skip:'跳过',ob_gotit:'知道了',
       first_rule_tip_title:'已添加第一条自定义规则',first_rule_tip_body:'既然您已经开始使用自己的规则，或许可以考虑关闭全部内置规则，避免彼此重叠或冲突。',first_rule_tip_warn:'内置规则已关闭。若要重新启用，请前往规则管理开启。',first_rule_tip_ok:'知道了',
+      rule_saved:(name,n)=>`规则已保存：${name} · 本页命中 ${n} 个元素`,rule_saved_zero:name=>`规则已保存：${name} · 本页没有命中任何元素，选择器可能太具体。`,rule_saved_off:name=>`规则已保存：${name} · 遮罩当前关闭，所以还看不到效果。请先开启「${t('enable')}」。`,
     },
     ja:{
       title:'Privacy Mosaic',enable:'マスクを有効化',
@@ -163,6 +154,7 @@
       ob_next_title:'始めましょう',ob_next_body:'上部の「ルール」タブを開き、最初のルールを追加してこのサイトのマスキングを開始してください。',
       ob_next:'次へ',ob_skip:'スキップ',ob_gotit:'了解',
       first_rule_tip_title:'最初のカスタムルールを追加しました',first_rule_tip_body:'独自のルールを使い始めたので、内蔵ルールとの重複や競合を避けるため、すべての内蔵ルールをオフにすることを検討できます。',first_rule_tip_warn:'内蔵ルールはオフです。再度有効にするにはルール管理から行ってください。',first_rule_tip_ok:'了解',
+      rule_saved:(name,n)=>`ルールを保存しました：${name} · このページで ${n} 件の要素に一致`,rule_saved_zero:name=>`ルールを保存しました：${name} · このページでは一致する要素がありません。セレクターが具体的すぎる可能性があります。`,rule_saved_off:name=>`ルールを保存しました：${name} · マスクがオフのため、まだ反映されません。「${t('enable')}」をオンにしてください。`,
     },
     ko:{
       title:'Privacy Mosaic',enable:'마스크 활성화',
@@ -196,6 +188,7 @@
       ob_next_title:'시작하기',ob_next_body:'위의 규칙 탭을 열고 첫 번째 규칙을 추가하여 이 사이트의 마스킹을 시작하세요.',
       ob_next:'다음',ob_skip:'건너뛰기',ob_gotit:'확인',
       first_rule_tip_title:'첫 번째 사용자 지정 규칙 추가됨',first_rule_tip_body:'이제 자신만의 규칙을 사용하고 계시니, 중복이나 충돌을 피하기 위해 모든 내장 규칙을 꺼두는 것을 고려해 보세요.',first_rule_tip_warn:'내장 규칙이 꺼져 있습니다. 다시 켜려면 규칙 관리에서 설정하세요.',first_rule_tip_ok:'확인',
+      rule_saved:(name,n)=>`규칙이 저장되었습니다: ${name} · 이 페이지에서 요소 ${n}개 일치`,rule_saved_zero:name=>`규칙이 저장되었습니다: ${name} · 이 페이지에서 일치하는 요소가 없습니다. 선택자가 너무 구체적일 수 있습니다.`,rule_saved_off:name=>`규칙이 저장되었습니다: ${name} · 마스크가 꺼져 있어 아직 적용되지 않습니다. "${t('enable')}"을(를) 켜 주세요.`,
     },
     es:{
       title:'Privacy Mosaic',enable:'Activar máscara',
@@ -229,6 +222,7 @@
       ob_next_title:'Comenzar',ob_next_body:'Abre la pestaña Reglas arriba y añade tu primera regla para empezar a enmascarar este sitio.',
       ob_next:'Siguiente',ob_skip:'Omitir',ob_gotit:'Entendido',
       first_rule_tip_title:'Primera regla personalizada añadida',first_rule_tip_body:'Ya que ahora usas tu propia regla, quizás quieras desactivar todas las reglas integradas para evitar solapamientos o conflictos.',first_rule_tip_warn:'Las reglas integradas están desactivadas. Puedes reactivarlas en cualquier momento desde el Administrador de reglas.',first_rule_tip_ok:'Entendido',
+      rule_saved:(name,n)=>`Regla guardada: ${name} · Coincide con ${n} elemento${n!==1?'s':''} en esta página`,rule_saved_zero:name=>`Regla guardada: ${name} · No coincide ningún elemento en esta página. El selector puede ser demasiado específico.`,rule_saved_off:name=>`Regla guardada: ${name} · El enmascarado está desactivado, así que aún no se verá. Activa "${t('enable')}".`,
     },
     'pt-BR':{
       title:'Privacy Mosaic',enable:'Ativar máscara',
@@ -262,6 +256,7 @@
       ob_next_title:'Vamos começar',ob_next_body:'Abra a aba Regras acima e adicione sua primeira regra para começar a mascarar este site.',
       ob_next:'Próximo',ob_skip:'Pular',ob_gotit:'Entendi',
       first_rule_tip_title:'Primeira regra personalizada adicionada',first_rule_tip_body:'Já que agora você está usando sua própria regra, talvez queira desativar todas as regras integradas para evitar sobreposição ou conflito.',first_rule_tip_warn:'As regras integradas estão desativadas. Reative-as a qualquer momento no Gerenciador de regras.',first_rule_tip_ok:'Entendi',
+      rule_saved:(name,n)=>`Regra salva: ${name} · Corresponde a ${n} elemento${n!==1?'s':''} nesta página`,rule_saved_zero:name=>`Regra salva: ${name} · Nenhum elemento correspondente nesta página. O seletor pode estar específico demais.`,rule_saved_off:name=>`Regra salva: ${name} · A máscara está desativada, então ainda não aparece. Ative "${t('enable')}".`,
     },
     fr:{
       title:'Privacy Mosaic',enable:'Activer le masque',
@@ -295,6 +290,7 @@
       ob_next_title:'Commencer',ob_next_body:'Ouvrez l\'onglet Règles ci-dessus et ajoutez votre première règle pour commencer à masquer ce site.',
       ob_next:'Suivant',ob_skip:'Ignorer',ob_gotit:'Compris',
       first_rule_tip_title:'Première règle personnalisée ajoutée',first_rule_tip_body:'Puisque vous utilisez désormais votre propre règle, vous pouvez envisager de désactiver toutes les règles intégrées pour éviter tout chevauchement ou conflit.',first_rule_tip_warn:'Les règles intégrées sont désactivées. Réactivez-les à tout moment depuis le gestionnaire de règles.',first_rule_tip_ok:'Compris',
+      rule_saved:(name,n)=>`Règle enregistrée : ${name} · ${n} élément${n!==1?'s':''} correspondant${n!==1?'s':''} sur cette page`,rule_saved_zero:name=>`Règle enregistrée : ${name} · Aucun élément ne correspond sur cette page. Le sélecteur est peut-être trop spécifique.`,rule_saved_off:name=>`Règle enregistrée : ${name} · Le masquage est désactivé, donc rien ne s'affiche encore. Activez « ${t('enable')} ».`,
     },
     ru:{
       title:'Privacy Mosaic',enable:'Включить маску',
@@ -328,6 +324,7 @@
       ob_next_title:'Начать',ob_next_body:'Откройте вкладку «Правила» выше и добавьте своё первое правило, чтобы начать маскировку этого сайта.',
       ob_next:'Далее',ob_skip:'Пропустить',ob_gotit:'Понятно',
       first_rule_tip_title:'Добавлено первое пользовательское правило',first_rule_tip_body:'Раз вы теперь используете собственное правило, вы можете отключить все встроенные правила, чтобы избежать пересечений или конфликтов.',first_rule_tip_warn:'Встроенные правила отключены. Включить их снова можно в любой момент в диспетчере правил.',first_rule_tip_ok:'Понятно',
+      rule_saved:(name,n)=>`Правило сохранено: ${name} · На этой странице совпало элементов: ${n}`,rule_saved_zero:name=>`Правило сохранено: ${name} · На этой странице ничего не совпало. Возможно, селектор слишком конкретный.`,rule_saved_off:name=>`Правило сохранено: ${name} · Маскировка выключена, поэтому эффекта пока нет. Включите «${t('enable')}».`,
     },
     de:{
       title:'Privacy Mosaic',enable:'Maske aktivieren',
@@ -361,6 +358,7 @@
       ob_next_title:'Loslegen',ob_next_body:'Öffnen Sie oben den Tab „Regeln“ und fügen Sie Ihre erste Regel hinzu, um diese Seite zu maskieren.',
       ob_next:'Weiter',ob_skip:'Überspringen',ob_gotit:'Verstanden',
       first_rule_tip_title:'Erste eigene Regel hinzugefügt',first_rule_tip_body:'Da Sie jetzt Ihre eigene Regel verwenden, möchten Sie vielleicht alle integrierten Regeln deaktivieren, um Überschneidungen oder Konflikte zu vermeiden.',first_rule_tip_warn:'Integrierte Regeln sind deaktiviert. Sie können sie jederzeit im Regel-Manager wieder aktivieren.',first_rule_tip_ok:'Verstanden',
+      rule_saved:(name,n)=>`Regel gespeichert: ${name} · ${n} Element${n!==1?'e':''} auf dieser Seite gefunden`,rule_saved_zero:name=>`Regel gespeichert: ${name} · Auf dieser Seite wurde nichts gefunden. Der Selektor ist möglicherweise zu spezifisch.`,rule_saved_off:name=>`Regel gespeichert: ${name} · Die Maskierung ist aus, daher ist noch nichts zu sehen. Aktiviere "${t('enable')}".`,
     },
     it:{
       title:'Privacy Mosaic',enable:'Abilita maschera',
@@ -394,6 +392,7 @@
       ob_next_title:'Inizia',ob_next_body:'Apri la scheda Regole in alto e aggiungi la tua prima regola per iniziare a mascherare questo sito.',
       ob_next:'Avanti',ob_skip:'Salta',ob_gotit:'Capito',
       first_rule_tip_title:'Prima regola personalizzata aggiunta',first_rule_tip_body:'Dato che ora usi una tua regola personalizzata, potresti voler disattivare tutte le regole integrate per evitare sovrapposizioni o conflitti.',first_rule_tip_warn:'Le regole integrate sono disattivate. Puoi riattivarle in qualsiasi momento dal Gestore regole.',first_rule_tip_ok:'Capito',
+      rule_saved:(name,n)=>`Regola salvata: ${name} · Corrisponde a ${n} element${n!==1?'i':'o'} in questa pagina`,rule_saved_zero:name=>`Regola salvata: ${name} · Nessun elemento corrisponde in questa pagina. Il selettore potrebbe essere troppo specifico.`,rule_saved_off:name=>`Regola salvata: ${name} · Il mascheramento è disattivato, quindi non si vede ancora nulla. Attiva "${t('enable')}".`,
     },
     tr:{
       title:'Privacy Mosaic',enable:'Maskelemeyi etkinleştir',
@@ -427,6 +426,7 @@
       ob_next_title:'Başlayalım',ob_next_body:'Yukarıdaki Kurallar sekmesini açın ve bu siteyi maskelemeye başlamak için ilk kuralınızı ekleyin.',
       ob_next:'İleri',ob_skip:'Atla',ob_gotit:'Anladım',
       first_rule_tip_title:'İlk özel kural eklendi',first_rule_tip_body:'Artık kendi kuralınızı kullandığınıza göre, çakışma veya çelişkileri önlemek için tüm yerleşik kuralları kapatmayı düşünebilirsiniz.',first_rule_tip_warn:'Yerleşik kurallar kapalı. İstediğiniz zaman Kural Yöneticisi\'nden tekrar açabilirsiniz.',first_rule_tip_ok:'Anladım',
+      rule_saved:(name,n)=>`Kural kaydedildi: ${name} · Bu sayfada ${n} öğe eşleşti`,rule_saved_zero:name=>`Kural kaydedildi: ${name} · Bu sayfada eşleşen öğe yok. Seçici fazla spesifik olabilir.`,rule_saved_off:name=>`Kural kaydedildi: ${name} · Maskeleme kapalı olduğu için henüz bir etki görünmez. "${t('enable')}" seçeneğini açın.`,
     },
   };
 
@@ -605,7 +605,6 @@
 
   function injectStyles(){
     GM_addStyle(`
-      
       ${GUARD}{user-select:none!important;}
 
       .${P}-blur{filter:blur(var(--pm-r,8px))!important;transition:filter .15s ease;}
@@ -639,7 +638,6 @@
         )!important;
         background-size:var(--pm-tile,8px) var(--pm-tile,8px)!important;
       }
-      
       .${P}-redact[data-pm-rv="checker"]::after{
         animation:none!important;
         background-image:
@@ -648,7 +646,6 @@
         background-size:var(--pm-tile,8px) var(--pm-tile,8px),var(--pm-tile,8px) var(--pm-tile,8px)!important;
         background-blend-mode:multiply!important;
       }
-      
       .${P}-redact[data-pm-rv="noise"]::after{
         animation:none!important;
         background-color:#2a2a3a!important;
@@ -682,19 +679,16 @@
         cursor:pointer!important;user-select:none!important;
       }
       #${P}-fab svg{display:block!important;}
-      
       .${P}-fab-wrap:hover #${P}-fab,.${P}-fab-wrap.show #${P}-fab{opacity:1!important;}
       .${P}-fab-wrap:hover #${P}-fab.${P}-on,.${P}-fab-wrap.show #${P}-fab.${P}-on{
         border-color:#6060e8!important;background:rgba(20,20,64,.94)!important;
         box-shadow:0 0 0 3px rgba(96,96,232,.25),0 2px 14px rgba(0,0,12,.6)!important;
       }
-      
       @keyframes ${P}-fab-intro-pulse{
         0%{transform:scale(.3);opacity:.9}
         60%{transform:scale(1.3);opacity:.25}
         100%{transform:scale(1.6);opacity:0}
       }
-      
       .${P}-intro-ring{
         position:fixed!important;pointer-events:none!important;z-index:2147483646!important;
         border-radius:50%!important;border:2px solid #6464c8!important;
@@ -756,7 +750,6 @@
         gap:6px!important;padding:12px 14px 10px!important;flex-shrink:0!important;
         border-bottom:1px solid var(--pm-border2)!important;}
       .${P}-title{font-size:15px!important;font-weight:700!important;color:var(--pm-text)!important;letter-spacing:.02em!important;flex:1!important;}
-      
       .${P}-hbtn{
         display:flex!important;align-items:center!important;justify-content:center!important;
         width:28px!important;height:28px!important;border-radius:7px!important;
@@ -764,11 +757,9 @@
         cursor:pointer!important;flex-shrink:0!important;font-size:15px!important;line-height:1!important;
         transition:background .15s,border-color .15s!important;user-select:none!important;}
       .${P}-hbtn:hover{background:var(--pm-bg2)!important;border-color:var(--pm-accent)!important;}
-      
       #${P}-lang-btn{font-size:11px!important;font-weight:700!important;color:var(--pm-text2)!important;
         min-width:28px!important;padding:0 4px!important;letter-spacing:.02em!important;}
       #${P}-lang-btn:hover{color:var(--pm-text)!important;}
-      
       #${P}-lang-drop{
         display:none!important;position:absolute!important;top:44px!important;right:36px!important;
         z-index:2147483647!important;min-width:160px!important;
@@ -783,7 +774,6 @@
         white-space:nowrap!important;}
       .${P}-lang-opt:hover{background:var(--pm-bg2)!important;color:var(--pm-text)!important;}
       .${P}-lang-opt.active{color:var(--pm-accent)!important;font-weight:600!important;}
-      
       .${P}-close{display:flex!important;align-items:center!important;justify-content:center!important;
         width:28px!important;height:28px!important;border-radius:7px!important;
         border:1px solid var(--pm-border2)!important;background:var(--pm-close-bg)!important;
@@ -792,7 +782,6 @@
       .${P}-close svg path{stroke:var(--pm-text3)!important;transition:stroke .15s!important;}
       .${P}-close:hover{background:var(--pm-bg2)!important;border-color:var(--pm-accent)!important;}
       .${P}-close:hover svg path{stroke:var(--pm-text)!important;}
-      
       .${P}-reset{
         font-size:10px!important;padding:2px 7px!important;border-radius:5px!important;
         border:1px solid var(--pm-border2)!important;background:var(--pm-btn-bg)!important;
@@ -823,7 +812,6 @@
         border-radius:4px!important;padding:1px 5px!important;width:fit-content!important;
         line-height:1.4!important;cursor:help!important;}
       .${P}-def-list{margin-top:12px!important;}
-      
       .${P}-def-summary{
         font-size:12px!important;font-weight:600!important;color:var(--pm-text)!important;
         cursor:pointer!important;user-select:none!important;list-style:none!important;
@@ -851,7 +839,6 @@
       }
       .${P}-def-group-hdr>.${P}-def-group-name{flex:1!important;}
       .${P}-def-group-count{font-weight:400!important;opacity:.7!important;}
-      
       .${P}-def-gsw{cursor:pointer!important;flex-shrink:0!important;}
       .${P}-def-gsw.mixed{background:var(--pm-accent-bg)!important;border-color:var(--pm-accent)!important;}
       .${P}-def-gsw.mixed::before{left:11px!important;background:var(--pm-accent)!important;}
@@ -954,7 +941,6 @@
       }
       .${P}-defbar-mgr:hover{text-decoration:underline!important;}
       .${P}-defbar.off .${P}-defbar-mgr{color:var(--pm-text2)!important;}
-      
       .${P}-rule-no-hint{display:block!important;margin-top:4px!important;font-size:11px!important;
         color:var(--pm-desc)!important;line-height:1.4!important;}
 
@@ -1042,17 +1028,19 @@
       .${P}-fr-body{font-size:13px!important;color:#a0a0d0!important;line-height:1.5!important;}
       .${P}-fr-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;}
       .${P}-fr-row-lbl{font-size:13px!important;color:#c0c0ff!important;font-weight:600!important;}
-      
       .${P}-fr-warn{
         display:none!important;font-size:12px!important;color:#ff6b6b!important;
         background:rgba(255,60,60,.1)!important;border:1px solid rgba(255,60,60,.35)!important;
         border-radius:8px!important;padding:8px 10px!important;line-height:1.45!important;
       }
       .${P}-fr-warn.show{display:block!important;}
-      
-      #${P}-firstrule-dialog .${P}-sw{background:#2a2a52!important;border-color:#46469c!important;}
+      #${P}-firstrule-dialog .${P}-sw{
+        background:#2a2a52!important;border-color:#46469c!important;
+      }
       #${P}-firstrule-dialog .${P}-sw::before{background:#8888c8!important;}
-      #${P}-firstrule-dialog .${P}-sw.on{background:#3030a0!important;border-color:#5050e0!important;}
+      #${P}-firstrule-dialog .${P}-sw.on{
+        background:#3030a0!important;border-color:#5050e0!important;
+      }
       #${P}-firstrule-dialog .${P}-sw.on::before{background:#fff!important;}
 
       #${P}-rulemgr{
@@ -1164,7 +1152,6 @@
         overflow-y:auto!important;max-height:calc(70vh - 56px)!important;
         margin:0 -8px!important;padding:0 8px!important;
       }
-      
       #${P}-lang-dialog-list .${P}-lang-opt{
         border-radius:8px!important;font-size:13px!important;padding:9px 12px!important;
         color:#9898c8!important;
@@ -1177,7 +1164,6 @@
         border-radius:10px!important;padding:12px!important;margin-bottom:12px!important;
         flex-direction:column!important;gap:8px!important;
       }
-      
       .${P}-ob-step{font-size:11px!important;color:var(--pm-text3)!important;font-weight:600!important;
         text-transform:uppercase!important;letter-spacing:.02em!important;}
       .${P}-ob-title{font-size:13px!important;font-weight:700!important;color:var(--pm-text)!important;}
@@ -1202,7 +1188,6 @@
         transition:background .15s,color .15s!important;
       }
       .${P}-rv-toggle:hover{background:rgba(0,0,0,.4)!important;color:var(--pm-text)!important;}
-      
       .${P}-rv-drop{
         display:none!important;position:fixed!important;
         z-index:2147483647!important;min-width:130px!important;
@@ -1338,6 +1323,7 @@
             <div id="${P}-sw" class="${P}-sw ${enabled?'on':''}"></div>
           </div>
           <div id="${P}-desc-enable" class="${P}-desc">${t('desc_enable')}</div>
+          <button id="${P}-add-rule-quick" class="${P}-add-rule-btn">${t('add_rule')}</button>
           <hr class="${P}-hr">
           <span id="${P}-lbl-style" class="${P}-slbl">${t('style_lbl')}</span>
           <div class="${P}-btns">
@@ -1526,9 +1512,8 @@
       openRuleManager();
     });
 
-    panelEl.querySelector(`#${P}-add-rule`).addEventListener('click',()=>{
-      detectEditId=null;closePanel();enterDetectMode();
-    });
+    panelEl.querySelector(`#${P}-add-rule`).addEventListener('click',startAddRule);
+    panelEl.querySelector(`#${P}-add-rule-quick`).addEventListener('click',startAddRule);
     const rulesList=panelEl.querySelector(`#${P}-rules-list`);
     if(rulesList)rulesList.addEventListener('click',onRuleListClick);
     panelEl.querySelector(`#${P}-defbar`)?.addEventListener('click',e=>{
@@ -1581,6 +1566,7 @@
     }
     q('lbl-enable').textContent=t('enable');
     q('desc-enable').textContent=t('desc_enable');
+    const addQuickEl=q('add-rule-quick');if(addQuickEl)addQuickEl.textContent=t('add_rule');
     q('lbl-style').textContent=t('style_lbl');
     [['btn-blur','blur'],['btn-redact','redact']].forEach(([id,key])=>{
       const lbl=q(id)?.querySelector(`.${P}-btn-lbl`);
@@ -2015,6 +2001,10 @@
       saveCfg();
     });
   }
+  function startAddRule(){
+    detectEditId=null;closePanel();enterDetectMode();
+  }
+
   function enterDetectMode(){
     detectMode=true;
     const bar=document.createElement('div');
@@ -2128,7 +2118,13 @@
     dlg.querySelector(`#${P}-rd-cancel`).addEventListener('click',()=>closeRuleDialog());
     dlg.querySelector(`#${P}-rd-save`).addEventListener('click',()=>{
       const name=nameInput.value.trim()||selector.slice(0,30);
-      const afterSave=()=>{if(onSaved){onSaved();}else{openPanel();renderCustomRules();}};
+      const afterSave=()=>{
+        if(onSaved){onSaved();return;}
+        openPanel();
+        panelEl.querySelector(`.${P}-tab[data-tab="rules"]`)?.click();
+        renderCustomRules();
+        showRuleSavedToast(name,selector);
+      };
       if(isEdit){
         if(!readonly)existingRule.selector=selector;
         existingRule.name=name;saveCfg();
@@ -2227,6 +2223,17 @@
     toastTimer=setTimeout(()=>{toast.classList.remove('show');},duration);
   }
 
+  function countRuleMatches(selector){
+    try{return [...document.querySelectorAll(selector)].filter(el=>!el.closest(GUARD)).length;}
+    catch(_){return 0;}
+  }
+  function showRuleSavedToast(name,selector){
+    if(!enabled){showToast(t('rule_saved_off')(name),7000);return;}
+    const n=countRuleMatches(selector);
+    if(n===0){showToast(t('rule_saved_zero')(name),7000);return;}
+    showToast(t('rule_saved')(name,n));
+  }
+
   function showLanguageDialog(){
     let backdrop=document.getElementById(`${P}-lang-dialog-backdrop`);
     if(!backdrop){
@@ -2272,15 +2279,16 @@
   }
 
   function deleteRule(id){
-    document.querySelectorAll(`[data-pm-rid="${id}"]`).forEach(el=>{
-      el.removeAttribute('data-pm-rid');
-      const remaining=(el.dataset.pmRids||'').split(',').filter(x=>x&&x!==id);
-      if(remaining.length){
-        el.setAttribute('data-pm-rids',remaining.join(','));
-      } else {
-        el.classList.remove(`${P}-custom-active`,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+    document.querySelectorAll(`.${P}-custom-active`).forEach(el=>{
+      const ids=(el.dataset.pmRids||'').split(',').filter(Boolean);
+      if(!ids.includes(id))return;
+      const others=ids.filter(x=>x!==id);
+      if(others.length){el.dataset.pmRids=others.join(',');return;}
+      delete el.dataset.pmRids;
+      el.classList.remove(`${P}-custom-active`);
+      if(!el.classList.contains(ACTIVE)){
+        el.classList.remove(`${P}-blur`,`${P}-redact`);
         if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-        if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
       }
     });
     cfg.customRules=cfg.customRules.filter(r=>r.id!==id);
@@ -2301,9 +2309,11 @@
           const others=(el.dataset.pmRids||'').split(',').filter(x=>x&&x!==id);
           el.dataset.pmRids=others.join(',');
           if(!others.length){
-            el.classList.remove(`${P}-custom-active`,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
-            if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-            if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
+            el.classList.remove(`${P}-custom-active`);
+            if(!el.classList.contains(ACTIVE)){
+              el.classList.remove(`${P}-blur`,`${P}-redact`);
+              if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
+            }
           }
         }
       });
@@ -2338,7 +2348,7 @@
     ids.push(rule.id);
     el.dataset.pmRids=ids.join(',');
     if(!el.classList.contains(`${P}-custom-active`)){
-      el.classList.remove(`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+      el.classList.remove(`${P}-blur`,`${P}-redact`);
       el.classList.add(`${P}-custom-active`);
       const isImg=el.tagName==='IMG';
       switch(cfg.style){
@@ -2354,10 +2364,12 @@
 
   function removeCustomEffects(){
     document.querySelectorAll(`.${P}-custom-active`).forEach(el=>{
-      el.classList.remove(`${P}-custom-active`,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+      el.classList.remove(`${P}-custom-active`);
       delete el.dataset.pmRids;
-      if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-      if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
+      if(!el.classList.contains(ACTIVE)){
+        el.classList.remove(`${P}-blur`,`${P}-redact`);
+        if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
+      }
     });
   }
 
@@ -2368,7 +2380,6 @@
     if(fab)fab.classList.toggle(`${P}-on`,enabled);
     if(enabled){
       scanAndTag();
-      if(customRulesActive())scanCustomRules();
     } else {
       removeMosaic();
       removeCustomEffects();
@@ -2426,7 +2437,7 @@
   function applyTo(el,src){
     if(!el||el.dataset.pmSkip)return;
     if(el.closest?.(GUARD))return;
-    el.classList.remove(`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+    el.classList.remove(`${P}-blur`,`${P}-redact`);
     el.classList.add(ACTIVE);
     if(src==='default')el.dataset.pmSrc='default';else delete el.dataset.pmSrc;
     switch(cfg.style){
@@ -2441,12 +2452,14 @@
 
   function clearDefaultRuleEffects(){
     document.querySelectorAll(`.${ACTIVE}[data-pm-src="default"]`).forEach(el=>{
-      el.classList.remove(ACTIVE,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+      el.classList.remove(ACTIVE);
       delete el.dataset.pmSrc;
-      if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-      if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
+      if(!el.classList.contains(`${P}-custom-active`)){
+        el.classList.remove(`${P}-blur`,`${P}-redact`);
+        if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
+      }
     });
-    updateCount(document.querySelectorAll(`.${ACTIVE}`).length);
+    updateCount();
   }
 
   function redactImg(img,src){
@@ -2468,10 +2481,9 @@
 
   function removeMosaic(){
     document.querySelectorAll(`.${ACTIVE}`).forEach(el=>{
-      el.classList.remove(ACTIVE,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+      el.classList.remove(ACTIVE,`${P}-blur`,`${P}-redact`);
       delete el.dataset.pmSrc;
       if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-      if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
     });
     updateCount();
   }
@@ -2491,7 +2503,7 @@
       scanHandleText(base===document?document:root);
     }
     scanCustomRules(root);
-    updateCount(document.querySelectorAll(`.${ACTIVE}`).length);
+    updateCount();
   }
 
   function scanHandleText(root){
@@ -2530,7 +2542,7 @@
     textNode.parentNode?.replaceChild(frag,textNode);
   }
 
-  function updateCount(n){
+  function updateCount(){
     if(!countEl)return;
     const total=document.querySelectorAll(`.${ACTIVE},.${P}-custom-active`).length;
     countEl.textContent=t('masked')(total);
@@ -2572,12 +2584,11 @@
       if(!el)return;
       e.preventDefault();e.stopPropagation();
       el.dataset.pmSkip='1';
-      el.classList.remove(ACTIVE,`${P}-custom-active`,`${P}-blur`,`${P}-redact`,`${P}-pixelate-text`);
+      el.classList.remove(ACTIVE,`${P}-custom-active`,`${P}-blur`,`${P}-redact`);
       delete el.dataset.pmRids;
       delete el.dataset.pmSrc;
       if(el._pmSh){el._pmSh.remove();el.classList.remove(`${P}-img-hidden`);delete el._pmSh;}
-      if(el._pmCv){el._pmCv.remove();el.style.display='';delete el._pmCv;delete el._pmDone;}
-      updateCount(document.querySelectorAll(`.${ACTIVE}`).length);
+      updateCount();
     },true);
   }
 
@@ -2622,6 +2633,8 @@
   }
 
   function init(){
+    let isFirstRun=false;
+    try{isFirstRun=GM_getValue(STORE,null)==null;}catch(_){}
     loadCfg();
     if(!Array.isArray(cfg.customRules))cfg.customRules=[];
     enabled=cfg.persistent;
@@ -2632,11 +2645,9 @@
 
     const go=()=>{
       buildFab();buildPanel();registerMenus();setupExemption();startObserver();
-      if(enabled){
-        scanAndTag();
-        if(customRulesActive())scanCustomRules();
-      }
+      if(enabled)scanAndTag();
       syncObserver();
+      if(isFirstRun){saveCfg();openPanel();}
     };
     document.readyState==='loading'
       ?document.addEventListener('DOMContentLoaded',go)
